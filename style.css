@@ -77,3 +77,74 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.ipod {
+  width: 230px;
+  background-color: #302B35;
+  border: 2px solid #73616D;
+  border-radius: 0;
+  padding: 15px;
+  position: absolute;
+  min-height: 300px;
+left: 100px;
+top: 300px;
+
+
+
+}
+
+.screen {
+  padding: 10px;
+  text-align: center;
+  background-color: #151820;
+  border: 1px solid #73616D;
+  border-radius: 8px;
+
+}
+
+.ipod-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 42px);
+    grid-template-areas:
+        ".    pause   ."
+        "prev play    next"
+        ".    mute    .";
+
+    gap: 6px;
+    margin-top: 12px;
+    flex: 1;
+    align-content: center;
+}
+
+.ipod-controls button {
+    width: 100%;
+    min-width: 0;
+    padding: 6px 2px;
+    background-color: #1B1920;
+    color: #E8E4DE;
+    border: 1px solid #73616D;
+    border-radius: 0;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.ipod-controls .play {
+    grid-area: play;
+}
+
+.ipod-controls .pause {
+    grid-area: pause;
+}
+
+.ipod-controls .next {
+    grid-area: next;
+}
+
+.ipod-controls .prev {
+    grid-area: prev;
+}
+
+.ipod-controls .mute {
+    grid-area: mute;
+}
