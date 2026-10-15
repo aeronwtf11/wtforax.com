@@ -10,6 +10,9 @@ body {
     font-family: monospace;
     background-image: url("background.png");
     background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
 }
 
 a { 
@@ -79,72 +82,212 @@ img {
 }
 
 .ipod {
-  width: 230px;
-  background-color: #302B35;
-  border: 2px solid #73616D;
-  border-radius: 0;
-  padding: 15px;
-  position: absolute;
-  min-height: 300px;
-left: 100px;
-top: 300px;
+    position: absolute;
+    top: 270px;
+    left: 40px;
 
+    width: 270px;
+    aspect-ratio: 3 / 5;
 
+    background-image: url("iPod.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
 }
 
-.screen {
-  padding: 10px;
-  text-align: center;
-  background-color: #151820;
-  border: 1px solid #73616D;
-  border-radius: 8px;
 
+
+.screen {
+    position: absolute;
+    top: 6%;
+    left: 10%;
+
+    width: 80%;
+    height: 35%;
+
+    background: #C8CDC5;
+    border: none;
+    padding: 0;
+
+    color: #151820;
+    text-align: center;
+    font-family: monospace;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.screen h3,
+.screen p {
+    margin: 0;
+    font-size: 15px;
+    color: #151820;
 }
 
 .ipod-controls {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 42px);
-    grid-template-areas:
-        ".    pause   ."
-        "prev play    next"
-        ".    mute    .";
-
-    gap: 6px;
-    margin-top: 12px;
-    flex: 1;
-    align-content: center;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
 .ipod-controls button {
-    width: 100%;
-    min-width: 0;
-    padding: 6px 2px;
-    background-color: #1B1920;
-    color: #E8E4DE;
-    border: 1px solid #73616D;
-    border-radius: 0;
-    font-size: 11px;
+    position: absolute;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0;
     cursor: pointer;
-}
-
-.ipod-controls .play {
-    grid-area: play;
-}
-
-.ipod-controls .pause {
-    grid-area: pause;
-}
-
-.ipod-controls .next {
-    grid-area: next;
-}
-
-.ipod-controls .prev {
-    grid-area: prev;
+    pointer-events: auto;
 }
 
 .ipod-controls .mute {
-    grid-area: mute;
+    top: 52%;
+    left: 36%;
+    width: 28%;
+    height: 10%;
+}
+
+
+.ipod-controls .prev {
+    top: 64%;
+    left: 20%;
+    width: 19%;
+    height: 15%;
+}
+
+
+.ipod-controls .play {
+    top: 64%;
+    left: 40%;
+    width: 20%;
+    height: 13%;
+}
+
+.ipod-controls .next {
+    top: 64%;
+    left: 61%;
+    width: 19%;
+    height: 15%;
+}
+
+.ipod-controls .pause {
+    top: 78%;
+    left: 36%;
+    width: 28%;
+    height: 11%;
+}
+
+.ipod-controls button:focus-visible {
+    outline: 2px solid #4A6380;
+}
+#terminal-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#terminal-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+.ipod-cat {
+    position: absolute;
+    width: 90px;
+    height: auto;
+
+    top: -110px;
+    right: -15px;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+#terminal-windows {
+    display: none;
+    position: fixed;
+
+    top: 80px;
+    right: 20px;
+
+    width: 750px;
+    height: 500px;
+
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 110px);
+    box-sizing: border-box;
+
+    background-color: #080808;
+    border: 3px solid #777777;
+    border-radius: 0;
+    padding: 10px;
+
+    z-index: 999;
+}
+
+#terminal-windows.open {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#terminal-output {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    color: #E8E4DE;
+    font-size: 18px;
+}
+
+
+#terminal-output img {
+    display: block;
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 12px 0;
+    border: 1px solid #777777;
+}
+
+footer {
+    position: relative;
+}
+
+.corner-cat {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: auto;
+    pointer-events: none;
+}
+
+.ipod-cat,
+.corner-cat {
+    pointer-events: auto;
+    cursor: pointer;
 }

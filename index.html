@@ -25,22 +25,26 @@
  </header>
  <main> 
 
-  <div class="ipod"> 
-   <audio id="music-player" src="music/why.mp3"></audio>
-    <div class="screen">
-         <h3> My Music</h3>
-        <p>why</p>
-        </div>
-  <div class="ipod-controls">
-        <button class="play">Play</button>
-        <button class="pause">Pause</button>
-        <button class="next">Next</button>
-        <button class="prev">Previous</button>
-        <button class="mute">Mute</button>
-        
-      </div>
-   
+  <div class="ipod">
 
+    <audio id="music-player" src="music/why.mp3"></audio>
+
+    <div class="screen">
+        <h3>My Music</h3>
+        <p>why</p>
+    </div>
+
+    <div class="ipod-controls">
+        <button class="mute" aria-label="Mute"></button>
+        <button class="prev" aria-label="Previous"></button>
+        <button class="play" aria-label="Play"></button>
+        <button class="next" aria-label="Next"></button>
+        <button class="pause" aria-label="Pause"></button>
+    </div>
+
+    <img src="cat-sitting.png" class="ipod-cat" alt="Cat">
+
+</div>
 
   </div>
  <section> 
@@ -50,7 +54,7 @@
 <h2 id="about-me">About me</h2>
  <p> Im Aaron, a 15y old Highschool student and currently live in Austria (holy opsec).
     I love <strong> Cats </strong>  and Electronics so much! (<em>as you can probably tell</em>).
-    I also love Climbing and WatchDogs (such a shame that they fucked up WatchDogs legion :/). </p> 
+    I also love Climbing and Twenty one pilots lmao. </p> 
 
 
 
@@ -72,22 +76,34 @@
 
   <section>
     <h2 id="contact-me">Contact Me</h2>
-    <p>Feel free to reach out if you want to collaborate or just say hello!
+    <p>Feel free to reach out if you want to say hello!
       I dont bite so here are my socials: <a href="https://www.tiktok.com/@double_a_ron11" target="_blank">TikTok.</a> 
       
-        
-        Ill answer the fastest on discord tho,so just send me a friend request I will accept it always. <a href="https://discord.com/users/1038538412426264606" target="_blank">send me a friend request</a>
+       
+        Ill answer the fastest on discord tho,so just send me a friend request I will accept it always: <a href="https://discord.com/users/1038538412426264606" target="_blank">send me a friend request</a>
     </p>
   </section>
 
   </main>
+  <button id="terminal-button">
+    <img src="terminal.png" alt="Open terminal">
+</button>
+  <div id="terminal-windows"> 
+    <h3> projects-bash</h3>
+    <p> Type ls to list all my projects and cat to view them.
+      Incase of confusion just type help.</p>
+    <div id="terminal-output"></div>
+    <input type="text" id="terminal-input" placeholder="Type your command here...">
+  </div>
 <footer>
   <p> Thanks for visiting my page! </p>
-  <p> Made with love for cats </p>
+  <p> <a href="https://www.four-paws.org/" target="_blank">Made with love for cats</a> </p>
 
+<img src="cat_sitting.png" class="corner-cat" alt="">
 
 </footer>
 <script src="script.js"></script>
+
+
 </body>  
 </html>         
-
