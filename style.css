@@ -74,6 +74,10 @@ nav ul {
         flex-direction: column;
         align-items: center;
     }
+    .ipod,
+    .corner-cat {
+        display: none;
+    }
 }
 
 img {
